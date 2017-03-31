@@ -5,6 +5,9 @@ import src.pars
 
 class TestUM:
 
+ def test_num (self):
+  assert src.pars.parse('1.1') == 1.1
+
  def test_neg(self):
   assert src.pars.parse('-2') == -2
 
@@ -36,4 +39,4 @@ class TestUM:
   assert src.pars. parse('2 {kg/c}')==['with_units', 2.0, ['unit_div', ['unit', 'kg'], 'c']]
 
  def test_unit_mul(self):
-    assert  src.pars.parse('2 {kg*c}') ==['with_units', 2.0, ['unit_mul', ['un
+    assert  src.pars.parse('2 {kg*c}') ==['with_units', 2.0, ['unit_mul', ['unit', 'kg'], 'c']]
